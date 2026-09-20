@@ -1,0 +1,47 @@
+{
+  "name": "code-playground",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "可嵌入教学博客的代码编辑 / 编译 / 运行 React 组件（本地 XCC + 在线 Godbolt / Rust Playground）",
+  "main": "./dist/code-playground.js",
+  "module": "./dist/code-playground.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/code-playground.js"
+    },
+    "./styles.css": "./dist/code-playground.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:demo": "tsc -b && vite build --config vite.demo.config.ts",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "oxlint": "^1.75.0",
+    "playwright-core": "^1.62.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.0",
+    "vite-plugin-dts": "^4.5.0"
+  }
+}
